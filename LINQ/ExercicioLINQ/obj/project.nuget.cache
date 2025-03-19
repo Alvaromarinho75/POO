@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HPeysQhgiVw=",
+  "success": true,
+  "projectFilePath": "/Users/lucasvra/Downloads/aula 2/ExercicioLINQ/ExercicioLINQ.csproj",
+  "expectedPackageFiles": [
+    "/Users/lucasvra/.nuget/packages/consoledump/0.7.0/consoledump.0.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
