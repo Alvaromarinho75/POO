@@ -4,16 +4,16 @@ class CotaParlamentar
 {
     public int? Legislatura { get; set; }
     public DateTime? DataEmissao { get; set; }
-    //public int? DocumentoId { get; set; }
+    public int? DocumentoId { get; set; }
     //public string CadastroId { get; set; }
     //public int? TipoDocumento { get; set; }
     //public string CarteiraParlamentar { get; set; }
-    //public int? DeputadoId { get; set; }
+    public int? DeputadoId { get; set; }
     //public int? NumeroLegislatura { get; set; }
     public int? Ano { get; set; }
     //public int? EspecificacaoSubCota { get; set; }
     //public int? Lote { get; set; }
-    //public int? Mes { get; set; }
+    public int? Mes { get; set; }
     //public int? Parcela { get; set; }
     public string? Ressarcimento { get; set; }
     //public int? SubCota { get; set; }
@@ -36,6 +36,8 @@ class CotaParlamentar
     {
         var linhas = File.ReadAllLines(caminhoArquivo).Skip(1);
         var lista = new List<CotaParlamentar>();
+        var partidos = new List<string>();
+        var deputados = new List<int>();
 
         foreach (var linha in linhas)
         {
@@ -45,16 +47,16 @@ class CotaParlamentar
             {
                 Legislatura = int.TryParse(campos[0], out var legislatura) ? legislatura : (int?)null,
                 DataEmissao = DateTime.TryParse(campos[1], out var dataEmissao) ? dataEmissao : (DateTime?)null,
-                //DocumentoId = int.TryParse(campos[2], out var documentoId) ? documentoId : (int?)null,
+                DocumentoId = int.TryParse(campos[2], out var documentoId) ? documentoId : (int?)null,
                 //CadastroId = string.IsNullOrEmpty(campos[3]) ? null : campos[3],
                 //TipoDocumento = int.TryParse(campos[4], out var tipoDocumento) ? tipoDocumento : (int?)null,
                 //CarteiraParlamentar = string.IsNullOrEmpty(campos[5]) ? null : campos[5],
-                //DeputadoId = int.TryParse(campos[6], out var deputadoId) ? deputadoId : (int?)null,
+                DeputadoId = int.TryParse(campos[6], out var deputadoId) ? deputadoId : (int?)null,
                 //NumeroLegislatura = int.TryParse(campos[7], out var numeroLegislatura) ? numeroLegislatura : (int?)null,
                 Ano = int.TryParse(campos[8], out var ano) ? ano : (int?)null,
                 //EspecificacaoSubCota = int.TryParse(campos[9], out var especificacaoSubCota) ? especificacaoSubCota : (int?)null,
                 //Lote = int.TryParse(campos[10], out var lote) ? lote : (int?)null,
-                //Mes = int.TryParse(campos[11], out var mes) ? mes : (int?)null,
+                Mes = int.TryParse(campos[11], out var mes) ? mes : (int?)null,
                 //Parcela = int.TryParse(campos[12], out var parcela) ? parcela : (int?)null,
                 Ressarcimento = string.IsNullOrEmpty(campos[13]) ? null : campos[13],
                 //SubCota = int.TryParse(campos[14], out var subCota) ? subCota : (int?)null,

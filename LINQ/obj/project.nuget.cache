@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HPeysQhgiVw=",
+  "dgSpecHash": "Ln3sRlHhonw=",
   "success": true,
-  "projectFilePath": "/Users/lucasvra/Downloads/aula 2/ExercicioLINQ/ExercicioLINQ.csproj",
+  "projectFilePath": "/home/a2023952438/Códigos/T. POO/POO/LINQ/ExercicioLINQ.csproj",
   "expectedPackageFiles": [
-    "/Users/lucasvra/.nuget/packages/consoledump/0.7.0/consoledump.0.7.0.nupkg.sha512"
+    "/home/a2023952438/.nuget/packages/consoledump/0.7.0/consoledump.0.7.0.nupkg.sha512"
   ],
   "logs": []
 }
