@@ -35,24 +35,26 @@
     ]
   },
   "packageFolders": {
-    "/home/a2023952438/.nuget/packages/": {}
+    "C:\\Users\\alvar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/a2023952438/Códigos/T. POO/POO/LINQ/ExercicioLINQ.csproj",
+      "projectUniqueName": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\LINQ\\ExercicioLINQ.csproj",
       "projectName": "ExercicioLINQ",
-      "projectPath": "/home/a2023952438/Códigos/T. POO/POO/LINQ/ExercicioLINQ.csproj",
-      "packagesPath": "/home/a2023952438/.nuget/packages/",
-      "outputPath": "/home/a2023952438/Códigos/T. POO/POO/LINQ/obj/",
+      "projectPath": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\LINQ\\ExercicioLINQ.csproj",
+      "packagesPath": "C:\\Users\\alvar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\LINQ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/a2023952438/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\alvar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -97,7 +99,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/255/sdk/8.0.405/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

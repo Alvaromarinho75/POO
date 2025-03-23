@@ -16,3 +16,21 @@
 /home/a2023952438/Códigos/T. POO/POO/LINQ/obj/Debug/net8.0/ExercicioLINQ.pdb
 /home/a2023952438/Códigos/T. POO/POO/LINQ/obj/Debug/net8.0/ExercicioLINQ.genruntimeconfig.cache
 /home/a2023952438/Códigos/T. POO/POO/LINQ/obj/Debug/net8.0/ref/ExercicioLINQ.dll
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.csproj.AssemblyReference.cache
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.AssemblyInfoInputs.cache
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.AssemblyInfo.cs
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.csproj.CoreCompileInputs.cache
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.sourcelink.json
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.dll
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\refint\ExercicioLINQ.dll
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.pdb
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ExercicioLINQ.exe
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ExercicioLINQ.deps.json
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ExercicioLINQ.runtimeconfig.json
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ExercicioLINQ.dll
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ExercicioLINQ.pdb
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\bin\Debug\net8.0\ConsoleDump.dll
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\Exercici.2F3C7B1A.Up2Date
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ExercicioLINQ.genruntimeconfig.cache
+C:\Users\alvar\OneDrive\Documentos\TPOO\POO\LINQ\obj\Debug\net8.0\ref\ExercicioLINQ.dll
