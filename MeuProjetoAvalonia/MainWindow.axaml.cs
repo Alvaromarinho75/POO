@@ -22,9 +22,6 @@
                     // Obtém o valor do RadioButton
                     var rad = this.FindControl<RadioButton>("radOpcao1").IsChecked;
 
-                    switch (rad)
-                    
-                    this.FindControl<TextBox>("txtResultado").Text = $"Olá, {numero + 2}!";
                 }
                 else
                 {
