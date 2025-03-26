@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MeuProjetoAvalonia.MainWindow"
+        Title="Primeiro Projeto com Avalonia UI" Width="1000" Height="700">
+  <StackPanel Margin="10">
+    <!-- Exibindo um texto -->
+    <TextBlock Text="Olá, escolha a conversão!"
+               FontSize="24"
+               HorizontalAlignment="Center"
+               Margin="0 0 0 10"/>
+
+    <StackPanel Orientation="Horizontal" 
+        HorizontalAlignment="Center" 
+        Margin="0 0 0 10">
+
+        <Expander Header="Temperatura" 
+            IsExpanded="False" 
+            x:Name="temperaturaOpcoes" 
+            Margin="0 0 0 10">
+        <StackPanel>
+            <RadioButton GroupName="Conversao" Content="Celsius para Fahrenheit"/>
+            <RadioButton GroupName="Conversao" Content="Fahrenheit para Celsius"/>
+            <RadioButton GroupName="Conversao" Content="Celsius para Kelvin"/>
+            <RadioButton GroupName="Conversao" Content="Kelvin para Celsius"/>
+        </StackPanel>
+        </Expander>
+        
+        <Expander Header="Comprimento" 
+            IsExpanded="False" 
+            x:Name="comprimentoOpcoes" 
+            Margin="10 0 0 10">
+        <StackPanel>
+            <RadioButton GroupName="Conversao" Content="Metros para Pés"/>
+            <RadioButton GroupName="Conversao" Content="Pés para Metros"/>
+            <RadioButton GroupName="Conversao" Content="Quilômetros para Milhas"/>
+            <RadioButton GroupName="Conversao" Content="Milhas para Quilômetros"/>
+        </StackPanel>
+        </Expander>
+        
+        <Expander Header="Peso/Massa" 
+            IsExpanded="False" 
+            x:Name="pesomassaOpcoes" 
+            Margin="10 0 0 10">
+        <StackPanel>
+            <RadioButton GroupName="Conversao" Content="Quilogramas para Libras"/>
+            <RadioButton GroupName="Conversao" Content="Libras para Quilogramas"/>
+            <RadioButton GroupName="Conversao" Content="Gramas para Onças"/>
+            <RadioButton GroupName="Conversao" Content="Onças para Gramas"/>
+        </StackPanel>
+        </Expander>
+        
+        <Expander Header="Volume" 
+            IsExpanded="False" 
+            x:Name="volumeOpcoes" 
+            Margin="10 0 0 10">
+        <StackPanel>
+            <RadioButton GroupName="Conversao" Content="Litros para Galões"/>
+            <RadioButton GroupName="Conversao" Content="Galões para Litros"/>
+            <RadioButton GroupName="Conversao" Content="Mililitros para Onças Fluidas"/>
+            <RadioButton GroupName="Conversao" Content="Onças Fluidas para Mililitros"/>
+        </StackPanel>
+        </Expander>
+    </StackPanel>
+   
+    <TextBox x:Name="txtInput"
+             Watermark="Digite o valor para conversao..."
+             Margin="0 0 0 10"/>
+   
+    <Button Content="Clique Aqui"
+            HorizontalAlignment="Center"
+            Click="BtnClique_Click"/>
+
+    <TextBox x:Name="txtResultado"
+            Watermark="Resultado da conversao..."
+            HorizontalAlignment="Center"
+            Margin="0 10 0 0"/>
+  </StackPanel>
+</Window>
