@@ -9,10 +9,10 @@ object lockConsole = new();
 
 Dictionary<string, int> Estoque = new Dictionary<string, int>
 {
-    { "Arroz", 3 },
-    { "Carne", 2 },
-    { "Macarrao", 4 },
-    { "Molho", 2 }
+    { "Arroz", 0 },
+    { "Carne", 0 },
+    { "Macarrao", 0 },
+    { "Molho", 0 }
 };
 
 
@@ -28,60 +28,6 @@ void ConsoleLock(string msg, ConsoleColor color)
 }
 int pedido = 0;
 
-int podePreparar(int prato){
-    int p = Interlocked.Increment(ref pedido);
-
-    switch(prato)
-    {
-        case 1:
-            if(Estoque["Arroz"] <= 0){
-                pedidos.Add((p, 4));
-                return 4;
-
-            } if(Estoque["Carne"] <= 0) {
-                pedidos.Add((p, 5));
-                return 5;
-
-            } else {
-                return 0;
-
-            }
-        case 2:
-            if(Estoque["Macarrao"] <= 0){
-                pedidos.Add((p, 6));
-                return 6;
-
-            } if(Estoque["Molho"] <= 0) {
-                pedidos.Add((p, 7));
-                return 7;
-
-            } else {
-                return 0;
-
-            }
-        case 3:
-            if(Estoque["Arroz"] <= 0){
-                pedidos.Add((p, 4));
-                return 4;
-
-            } if(Estoque["Carne"] <= 0) {
-                pedidos.Add((p, 5));
-                return 5;
-
-            } if(Estoque["Molho"] <= 0) {
-                pedidos.Add((p, 7));
-                return 7;
-
-            } else {
-                return 0;
-
-            }
-        default:
-            return 1;
-    }
-
-}
-
 void Garcom()
 {
     var rnd = new Random();
@@ -95,7 +41,8 @@ void Garcom()
 
         Thread.Sleep(tempo);
 
-        ConsoleLock($"[Garcom {id}] Enviei pedido {p} do prato {prato}!", ConsoleColor.Blue);
+        ConsoleLock($"[Garcom {id}] Enviei pedido {p} do prato {prato}!", 
+            ConsoleColor.Blue);
         pedidos.Add((p, prato));
     }
     pedidos.CompleteAdding();
@@ -105,14 +52,10 @@ void Chef()
 {   
     var id = Thread.CurrentThread.ManagedThreadId;
     Console.WriteLine($"[Chef {id}] Estou pronto!!!");
-    foreach(var item in pedidos.GetConsumingEnumerable())
+    foreach (var item in pedidos.GetConsumingEnumerable())
     {
         var (pedido, prato) = item;
 
-        if(podePreparar(prato) != 0)
-        {
-            pedido = podePreparar(prato);
-        }
         ConsoleLock($"[Chef {id}] Iniciando o pedido {pedido} do prato {prato}!", 
             ConsoleColor.Red);
         ConsoleLock("[Estoque] " + 
@@ -121,56 +64,104 @@ void Chef()
             $"Macarrao: {Estoque["Macarrao"]} | " +
             $"Molho: {Estoque["Molho"]}", ConsoleColor.Yellow);
 
+        bool processando = true;
+        while (processando) {
+            lock (Estoque) {
+                switch (prato) {
+                    case 1:
+                        if (Estoque["Arroz"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque arroz insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 4; 
+                            continue; 
+                        }
+                        if (Estoque["Carne"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque carne insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 5; 
+                            continue;
+                        }
+                        Estoque["Arroz"]--;
+                        Estoque["Carne"]--;
+                        Thread.Sleep(2000);
+                        processando = false;
+                        break;
 
-        switch(prato)
-        {
-            case 1:
-                Thread.Sleep(2000);
-                Estoque["Arroz"]--;
-                Estoque["Carne"]--;
-                break;
-            case 2:
-                Thread.Sleep(2000);
-                Estoque["Macarrao"]--;
-                Estoque["Molho"]--;
-                break;
-            case 3:
-                Thread.Sleep(3000);
-                Estoque["Arroz"]--;
-                Estoque["Carne"]--;
-                Estoque["Molho"]--;
-                break;
-            case 4:
-                ConsoleLock($"[Chef {id}] produzindo arroz", ConsoleColor.Green);
-                Thread.Sleep(2000);
-                Estoque["Arroz"] += 3;
-                ConsoleLock($"[Chef {id}] arroz produzido", ConsoleColor.Green);
-                break;
-            
-            case 5:
-                ConsoleLock($"[Chef {id}] produzindo carne", ConsoleColor.Green);
-                Thread.Sleep(2000);
-                Estoque["Carne"] += 2;
-                ConsoleLock($"[Chef {id}] carne produzida", ConsoleColor.Green);
-                break;
+                    case 2:
+                        if (Estoque["Macarrao"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque macarrão insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 6; 
+                            continue; 
+                        }
+                        if (Estoque["Molho"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque molho insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 7; 
+                            continue; 
+                        }
+                        Estoque["Macarrao"]--;
+                        Estoque["Molho"]--;
+                        Thread.Sleep(2000);
+                        processando = false; // Sai do loop após processar o pedido
+                        break;
 
-            case 6:
-                ConsoleLock($"[Chef {id}] produzindo macarrao", ConsoleColor.Green);
-                Thread.Sleep(2000);
-                Estoque["Macarrao"] += 4;
-                ConsoleLock($"[Chef {id}] macarrao produzido", ConsoleColor.Green);
-                break;
+                    case 3:
+                        if (Estoque["Arroz"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque arroz insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 4; 
+                            continue; 
+                        }
+                        if (Estoque["Carne"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque carne insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 5; 
+                            continue; 
+                        }
+                        if (Estoque["Molho"] == 0) {
+                            ConsoleLock($"[Chef {id}] Estoque molho insuficiente para o pedido {pedido} do prato {prato}!", ConsoleColor.Red);
+                            prato = 7; 
+                            continue; 
+                        }
+                        Estoque["Arroz"]--;
+                        Estoque["Carne"]--;
+                        Estoque["Molho"]--;
+                        Thread.Sleep(3000);
+                        processando = false; 
+                        break;
 
-            case 7:
-                ConsoleLock($"[Chef {id}] produzindo molho", ConsoleColor.Green);
-                Thread.Sleep(2000);
-                Estoque["Molho"] += 2;
-                ConsoleLock($"[Chef {id}] molho produzido", ConsoleColor.Green);
-                break;
+                    case 4:
+                        ConsoleLock($"[Chef {id}] Reabastecendo Arroz!", ConsoleColor.Green);
+                        Thread.Sleep(2000);
+                        Estoque["Arroz"] += 3;
+                        ConsoleLock($"[Chef {id}] Arroz Reabastecido!", ConsoleColor.Green);
+                        processando = false; 
+                        break;
+
+                    case 5:
+                        ConsoleLock($"[Chef {id}] Reabastecendo Carne!", ConsoleColor.Green);
+                        Thread.Sleep(2000);
+                        Estoque["Carne"] += 2;
+                        ConsoleLock($"[Chef {id}] Carne Reabastecida!", ConsoleColor.Green);
+                        processando = false; 
+                        break;
+
+                    case 6:
+                        ConsoleLock($"[Chef {id}] Reabastecendo Macarrão!", ConsoleColor.Green);
+                        Thread.Sleep(2000);
+                        Estoque["Macarrao"] += 4;
+                        ConsoleLock($"[Chef {id}] Macarrão Reabastecido!", ConsoleColor.Green);
+                        processando = false; 
+                        break;
+
+                    case 7:
+                        ConsoleLock($"[Chef {id}] Reabastecendo Molho!", ConsoleColor.Green);
+                        Thread.Sleep(2000);
+                        Estoque["Molho"] += 2;
+                        ConsoleLock($"[Chef {id}] Molho Reabastecido!", ConsoleColor.Green);
+                        processando = false;
+                        break;
+                }
+            }
         }
 
-        ConsoleLock($"[Chef {id}] Finalizado o pedido {pedido} do prato {prato}!",
-             ConsoleColor.Red);
+        ConsoleLock($"[Chef {id}] Finalizado o pedido {pedido} do prato {prato}!", 
+            ConsoleColor.Red);
         ConsoleLock("[Estoque] " + 
             $"Arroz: {Estoque["Arroz"]} | " +
             $"Carne: {Estoque["Carne"]} | " +
