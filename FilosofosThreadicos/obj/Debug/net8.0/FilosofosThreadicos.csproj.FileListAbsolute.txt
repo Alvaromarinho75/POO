@@ -1,0 +1,15 @@
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.AssemblyInfoInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.AssemblyInfo.cs
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.csproj.CoreCompileInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.sourcelink.json
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/bin/Debug/net8.0/FilosofosThreadicos
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/bin/Debug/net8.0/FilosofosThreadicos.deps.json
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/bin/Debug/net8.0/FilosofosThreadicos.runtimeconfig.json
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/bin/Debug/net8.0/FilosofosThreadicos.dll
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/bin/Debug/net8.0/FilosofosThreadicos.pdb
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.dll
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/refint/FilosofosThreadicos.dll
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.pdb
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/FilosofosThreadicos.genruntimeconfig.cache
+/home/a2023952438/Códigos/T. POO/POO/FilosofosThreadicos/obj/Debug/net8.0/ref/FilosofosThreadicos.dll
