@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Player1.MainWindow"
+        Title="Player1 - Batalha Naval"
+        Width="600" Height="500">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+
+
+        <!-- Botões de seleção, texto centralizado -->
+        <StackPanel Name="SelecaoStack" Orientation="Vertical" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center"> 
+            <Button Name="BtnAleatorio" Content="Posicionamento Aleatório" Width="350" Height="70" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Name="BtnManual" Content="Posicionamento Manual" Width="350" Height="70" FontSize="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Mensagem -->
+        <Border Width="400" Padding="10" Margin="0,0,0,10">
+            <TextBlock Name="MensagemText" FontSize="16" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Tabuleiro -->
+        <Grid Name="TabuleiroGrid" Margin="0,20,0,0" IsVisible="False"/>
+
+        <!-- Botões abaixo do grid -->
+        <StackPanel Name="AcoesStack" Orientation="Horizontal" Spacing="20" HorizontalAlignment="Center" IsVisible="False">
+            <Button Name="BtnCancelar" Content="Cancelar" Width="150" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="BtnCancelar_Click"/>
+            <Button Name="BtnConectar" Content="Conectar" Width="150" Height="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="BtnConectar_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
