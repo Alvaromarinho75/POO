@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MeuProjetoAvalonia
-build_property.ProjectDir = /home/a2023952438/Códigos/T. POO/POO/MeuProjetoAvalonia/
+build_property.ProjectDir = C:\Users\alvar\OneDrive\Documentos\TPOO\POO\MeuProjetoAvalonia\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/home/a2023952438/Códigos/T. POO/POO/MeuProjetoAvalonia/App.axaml]
+[C:/Users/alvar/OneDrive/Documentos/TPOO/POO/MeuProjetoAvalonia/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/a2023952438/Códigos/T. POO/POO/MeuProjetoAvalonia/MainWindow.axaml]
+[C:/Users/alvar/OneDrive/Documentos/TPOO/POO/MeuProjetoAvalonia/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
