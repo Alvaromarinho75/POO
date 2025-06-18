@@ -1,0 +1,14 @@
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/bin/Debug/net8.0/MonitorTemp
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/bin/Debug/net8.0/MonitorTemp.deps.json
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/bin/Debug/net8.0/MonitorTemp.runtimeconfig.json
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/bin/Debug/net8.0/MonitorTemp.dll
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/bin/Debug/net8.0/MonitorTemp.pdb
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.AssemblyInfoInputs.cache
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.AssemblyInfo.cs
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.csproj.CoreCompileInputs.cache
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.dll
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/refint/MonitorTemp.dll
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.pdb
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/MonitorTemp.genruntimeconfig.cache
+/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/Debug/net8.0/ref/MonitorTemp.dll
