@@ -9,27 +9,30 @@ public partial class MainWindow : Window
 {
     private const int Tamanho = 10;
     private int barcosRestantes = 10;
+    private bool jogoAcabou = false;
     private Button[,] botoes = new Button[Tamanho, Tamanho];
     private bool[,] barcos = new bool[Tamanho, Tamanho];
     private TcpConnection? tcpConnection;
 
     public MainWindow()
     {
-        InitializeComponent();        
+        InitializeComponent();
         SetMensagem("Conectando ao servidor...");
-        
-            tcpConnection = new TcpConnection();
-            try
-            {
-                tcpConnection.ConnectToServer("127.0.0.1", 12345); // IP e porta do servidor
-                SetMensagem("Conectado ao servidor! Você pode começar a atacar.");
-                InicializarTabuleiro(); // Inicializa o grid para ataques
-            }
-            catch (Exception)
-            {
-                SetMensagem($"Erro ao conectar ao servidor, incie o Player 1 primeiro!");
-            }
-        
+
+        tcpConnection = new TcpConnection();
+        try
+        {
+            tcpConnection.ConnectToServer("127.0.0.1", 12345); // IP e porta do servidor
+            SetMensagem("Conectado ao servidor! Você pode começar a atacar.");
+            InicializarTabuleiro(); // Inicializa o grid para ataques
+            
+            this.FindControl<Button>("BtnTentarConectar")!.IsVisible = false;
+        }
+        catch (Exception)
+        {
+            SetMensagem($"Erro ao conectar ao servidor, incie o Player 1 primeiro!");
+        }
+
 
 
     }
@@ -89,22 +92,6 @@ public partial class MainWindow : Window
         }
     }
 
-    private void PosicionarBarcosAleatoriamente()
-    {
-        var rnd = new Random();
-        int colocados = 0;
-        while (colocados < 10)
-        {
-            int i = rnd.Next(Tamanho), j = rnd.Next(Tamanho);
-            if (!barcos[i, j])
-            {
-                barcos[i, j] = true;
-                colocados++;
-            }
-        }
-        barcosRestantes = 0; // Todos os barcos já foram posicionados
-    }
-
     private void AtualizarTabuleiro()
     {
         for (int i = 0; i < Tamanho; i++)
@@ -136,11 +123,21 @@ public partial class MainWindow : Window
 
     private void BtnAtaque_Click(object? sender, RoutedEventArgs e)
     {
+        if (jogoAcabou)
+        {
+            SetMensagem("O jogo já acabou! Reinicie para jogar novamente.");
+            return;
+        }
         var btn = sender as Button;
         if (btn == null) return;
 
         var (i, j) = ((int, int))btn.Tag!;
         string coordenada = $"{(char)('A' + i)}{j}"; // Converte a coordenada para o formato "A0", "B7", etc.
+        if (btn.Background == Brushes.Blue || btn.Background == Brushes.Red)
+        {
+            SetMensagem("Você já atacou essa célula! Escolha outra.");
+            return;
+        }
 
         SetMensagem($"Enviando ataque para {coordenada}...");
         try
@@ -161,6 +158,7 @@ public partial class MainWindow : Window
             }
             else if (resposta == "WIN")
             {
+                jogoAcabou = true;
                 btn.Background = Brushes.Red;
                 SetMensagem("Você venceu! Todos os navios foram afundados!");
             }

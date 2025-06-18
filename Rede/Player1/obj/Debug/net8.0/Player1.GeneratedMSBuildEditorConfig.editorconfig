@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Player1
-build_property.ProjectDir = /home/a2023952438/Códigos/T. POO/POO/Rede/Player1/
+build_property.ProjectDir = C:\Users\alvar\OneDrive\Documentos\TPOO\POO\Rede\Player1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[/home/a2023952438/Códigos/T. POO/POO/Rede/Player1/App.axaml]
+[C:/Users/alvar/OneDrive/Documentos/TPOO/POO/Rede/Player1/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/a2023952438/Códigos/T. POO/POO/Rede/Player1/MainWindow.axaml]
+[C:/Users/alvar/OneDrive/Documentos/TPOO/POO/Rede/Player1/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

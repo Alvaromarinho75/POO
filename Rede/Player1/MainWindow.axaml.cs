@@ -11,9 +11,11 @@ public partial class MainWindow : Window
 {
     private const int Tamanho = 10;
     private int barcosRestantes = 10;
+    private bool jogoAcabou = false;
     private Button[,] botoes = new Button[Tamanho, Tamanho];
     private bool[,] barcos = new bool[Tamanho, Tamanho];
     private bool[,] ataques = new bool[Tamanho, Tamanho];
+    private bool[,] acertos = new bool[Tamanho, Tamanho]; // Adicionado para rastrear acertos
 
     public MainWindow()
     {
@@ -32,17 +34,14 @@ public partial class MainWindow : Window
         grid.RowDefinitions.Clear();
         grid.ColumnDefinitions.Clear();
 
-        // Define o espaçamento entre as colunas
-        grid.ColumnSpacing = 1; // Ajuste o valor conforme necessário
+        grid.ColumnSpacing = 1; 
 
-        // Configura as linhas e colunas do Grid
         for (int i = 0; i < Tamanho; i++)
         {
             grid.RowDefinitions.Add(new RowDefinition(GridLength.Star));
             grid.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Star));
         }
 
-        // Adiciona os botões ao Grid
         for (int i = 0; i < Tamanho; i++)
         {
             for (int j = 0; j < Tamanho; j++)
@@ -133,12 +132,13 @@ public partial class MainWindow : Window
             {
                 if (ataques[i, j])
                 {
-                    // Se a célula foi atacada, use verde para acerto e vermelho para erro
-                    botoes[i, j].Background = barcos[i, j] ? Brushes.Green : Brushes.Red;
+                    if (acertos[i, j])
+                        botoes[i, j].Background = Brushes.Green; // Acertou navio
+                    else
+                        botoes[i, j].Background = Brushes.Red;   // Errou
                 }
                 else
                 {
-                    // Se a célula não foi atacada, use azul para células vazias e cinza para navios
                     botoes[i, j].Background = barcos[i, j] ? Brushes.Gray : Brushes.Blue;
                 }
             }
@@ -199,6 +199,8 @@ public partial class MainWindow : Window
     {
         while (true)
         {
+            if (jogoAcabou) break; // Interrompe o loop se o jogo acabou
+
             try
             {
                 string coordenada = tcpConnection?.Receive() ?? string.Empty;
@@ -212,19 +214,21 @@ public partial class MainWindow : Window
                 if (barcos[linha, coluna])
                 {
                     ataques[linha, coluna] = true; // Marca como atacado
-                    barcos[linha, coluna] = false; // Marca o navio como afundado
+                    acertos[linha, coluna] = true; // Marca como acerto
 
-                    // Atualiza o tabuleiro no thread principal
                     Dispatcher.UIThread.InvokeAsync(() =>
                     {
                         AtualizarTabuleiro();
                     });
 
+                    barcos[linha, coluna] = false; // Marca o navio como afundado
+
                     if (AreAllShipsSunk())
                     {
+                        jogoAcabou = true;
                         tcpConnection?.Send("WIN");
                         SetMensagemThreadSafe("Todos os navios foram afundados! Você perdeu!");
-                        break; // Encerra o loop
+                        break;
                     }
                     else
                     {
@@ -238,7 +242,7 @@ public partial class MainWindow : Window
                 }
                 else
                 {
-                    ataques[linha, coluna] = true; // Marca como atacado
+                    ataques[linha, coluna] = true;
                     Dispatcher.UIThread.InvokeAsync(() =>
                     {
                         AtualizarTabuleiro();
@@ -260,7 +264,7 @@ public partial class MainWindow : Window
         for (int i = 0; i < Tamanho; i++)
             for (int j = 0; j < Tamanho; j++)
                 if (barcos[i, j]) return false;
-        SetMensagemThreadSafe("Todos os navios foram afundados! Você perdeu!");
+        // Não precisa setar mensagem aqui, pois já é feito em ProcessarAtaques
         return true;
     }
 }

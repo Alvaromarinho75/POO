@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/a2023952438/Códigos/T. POO/POO/Rede/Player2/Player2.csproj": {}
+    "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\Rede\\Player2\\Player2.csproj": {}
   },
   "projects": {
-    "/home/a2023952438/Códigos/T. POO/POO/Rede/Player2/Player2.csproj": {
+    "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\Rede\\Player2\\Player2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/a2023952438/Códigos/T. POO/POO/Rede/Player2/Player2.csproj",
+        "projectUniqueName": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\Rede\\Player2\\Player2.csproj",
         "projectName": "Player2",
-        "projectPath": "/home/a2023952438/Códigos/T. POO/POO/Rede/Player2/Player2.csproj",
-        "packagesPath": "/home/a2023952438/.nuget/packages/",
-        "outputPath": "/home/a2023952438/Códigos/T. POO/POO/Rede/Player2/obj/",
+        "projectPath": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\Rede\\Player2\\Player2.csproj",
+        "packagesPath": "C:\\Users\\alvar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alvar\\OneDrive\\Documentos\\TPOO\\POO\\Rede\\Player2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/a2023952438/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\alvar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/256/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
