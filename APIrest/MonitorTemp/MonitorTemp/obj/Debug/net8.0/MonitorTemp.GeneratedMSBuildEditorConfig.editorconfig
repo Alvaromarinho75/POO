@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MonitorTemp
-build_property.ProjectDir = /home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/
+build_property.ProjectDir = /home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

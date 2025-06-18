@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JN0bVe8voWU=",
+  "dgSpecHash": "KTCBzBOS+js=",
   "success": true,
-  "projectFilePath": "/home/a2023952438/Documentos/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
+  "projectFilePath": "/home/a2023952438/Códigos/T. POO/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
   "expectedPackageFiles": [
     "/home/a2023952438/.nuget/packages/microsoft.aspnetcore.openapi/8.0.14/microsoft.aspnetcore.openapi.8.0.14.nupkg.sha512",
     "/home/a2023952438/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

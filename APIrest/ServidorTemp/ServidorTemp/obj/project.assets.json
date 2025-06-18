@@ -487,11 +487,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/a2023952438/Documentos/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
+      "projectUniqueName": "/home/a2023952438/Códigos/T. POO/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
       "projectName": "ServidorTemp",
-      "projectPath": "/home/a2023952438/Documentos/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
+      "projectPath": "/home/a2023952438/Códigos/T. POO/POO/APIrest/ServidorTemp/ServidorTemp/ServidorTemp.csproj",
       "packagesPath": "/home/a2023952438/.nuget/packages/",
-      "outputPath": "/home/a2023952438/Documentos/POO/APIrest/ServidorTemp/ServidorTemp/obj/",
+      "outputPath": "/home/a2023952438/Códigos/T. POO/POO/APIrest/ServidorTemp/ServidorTemp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/a2023952438/.nuget/NuGet/NuGet.Config"

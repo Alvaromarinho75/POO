@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj": {}
+    "/home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj": {}
   },
   "projects": {
-    "/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj": {
+    "/home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj",
+        "projectUniqueName": "/home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj",
         "projectName": "MonitorTemp",
-        "projectPath": "/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj",
+        "projectPath": "/home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/MonitorTemp.csproj",
         "packagesPath": "/home/a2023952438/.nuget/packages/",
-        "outputPath": "/home/a2023952438/Documentos/POO/APIrest/MonitorTemp/MonitorTemp/obj/",
+        "outputPath": "/home/a2023952438/Códigos/T. POO/POO/APIrest/MonitorTemp/MonitorTemp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/a2023952438/.nuget/NuGet/NuGet.Config"

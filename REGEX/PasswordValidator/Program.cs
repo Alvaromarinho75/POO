@@ -79,7 +79,7 @@ public class Program
     public static void ParseNobelPrizes()
     {
         Console.WriteLine("\n--- Analisador de Prêmios Nobel ---");
-        string fileName = "/home/a2023952438/Documentos/POO/REGEX/prize.json";
+        string fileName = "prize.json";
         try
         {
             string jsonString = File.ReadAllText(fileName);

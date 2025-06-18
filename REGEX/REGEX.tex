@@ -1,0 +1,148 @@
+\documentclass[
+	12pt,				% tamanho da fonte
+	oneside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{listings}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{green},
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  basicstyle=\ttfamily
+}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Prática XXX\\Laboratório de YYY}
+\autor{Aluno1, Aluno2, Aluno3}
+\local{Belo Horizonte, Brasil}
+\data{202X}
+\instituicao{%
+  Universidade Federal de Minas Gerais
+  \par
+  Colégio Técnico
+  \par
+  Curso Técnico em XXX}
+
+\definecolor{blue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+\renewcommand{\thesection}{\arabic{section}}
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm} 
+
+\makeindex
+
+
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing 
+
+\imprimircapa
+
+{
+\ABNTEXchapterfont
+
+\textual
+
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\section{Introdução}
+
+O experimento realizado teve como objetivo explorar o uso de expressões regulares (REGEX) em C\#, por meio do desenvolvimento de duas aplicações: um validador de senhas e um analisador de prêmios Nobel. O validador de senhas solicita ao usuário uma senha e verifica se ela é considerada forte, de acordo com critérios pré-definidos. Já o analisador de prêmios Nobel lê um arquivo JSON contendo informações sobre os laureados e exibe os nomes dos ganhadores do prêmio de economia. O objetivo principal foi compreender a aplicação prática das expressões regulares e do processamento de arquivos JSON em C\#.
+
+\section{Desenvolvimento}
+
+A estratégia adotada para o validador de senhas consistiu em utilizar a classe \texttt{Regex} do .NET para verificar se a senha inserida pelo usuário atendia aos seguintes critérios: tamanho entre 7 e 16 caracteres, presença de letras maiúsculas, minúsculas, dígitos e caracteres especiais. O programa solicita repetidamente a senha até que uma senha forte seja fornecida.
+
+No analisador de prêmios Nobel, foi utilizada a biblioteca \texttt{System.Text.Json} para deserializar o arquivo \texttt{prize.json}. O código percorre a lista de prêmios, filtra aqueles da categoria ``economics'' e exibe os nomes dos laureados. A fundamentação teórica incluiu o estudo de expressões regulares para validação de padrões e manipulação de arquivos JSON em C\#.
+
+\begin{lstlisting}[language=C]
+// Trecho do validador de senha
+var regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()+=_\-{}\[\]:;""'?<>,.]).{7,16}$");
+if (regex.IsMatch(password)) {
+    Console.WriteLine("Sucesso! A senha é forte.");
+}
+
+// Trecho do analisador de prêmios Nobel
+var root = JsonSerializer.Deserialize<RootObject>(jsonString);
+var economicsLaureates = root.Prizes
+    .Where(p => p.Category == "economics" && p.Laureates != null)
+    .SelectMany(p => p.Laureates);
+foreach (var laureate in economicsLaureates) {
+    Console.WriteLine(laureate.Firstname);
+}
+\end{lstlisting}
+
+\section{Resultados}
+
+Os resultados obtidos demonstraram que o validador de senhas foi capaz de identificar corretamente senhas fortes e fracas, conforme os critérios estabelecidos. O programa forneceu feedback claro ao usuário, solicitando nova entrada quando necessário. O analisador de prêmios Nobel conseguiu ler o arquivo JSON e listar corretamente os nomes dos laureados em economia.
+
+A análise crítica mostra que os objetivos foram atingidos: o uso de expressões regulares facilitou a validação de padrões complexos, enquanto a manipulação de JSON permitiu o processamento eficiente de dados estruturados. Não foram observados desvios significativos em relação ao esperado.
+
+\section{Conclusão}
+
+Os resultados alcançados estão de acordo com a teoria e os objetivos propostos. As principais dificuldades envolveram a construção da expressão regular para a senha e o mapeamento correto das classes para deserialização do JSON, ambas superadas com pesquisa e testes. O experimento proporcionou aprendizado prático sobre REGEX e manipulação de arquivos em C\#, habilidades essenciais para o desenvolvimento de aplicações robustas e seguras.
+
+\end{document}
