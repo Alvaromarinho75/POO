@@ -1,0 +1,15 @@
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.AssemblyInfoInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.AssemblyInfo.cs
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.csproj.CoreCompileInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.sourcelink.json
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/bin/Debug/net8.0/ArrayPool
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/bin/Debug/net8.0/ArrayPool.deps.json
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/bin/Debug/net8.0/ArrayPool.runtimeconfig.json
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/bin/Debug/net8.0/ArrayPool.dll
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/bin/Debug/net8.0/ArrayPool.pdb
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.dll
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/refint/ArrayPool.dll
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.pdb
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ArrayPool.genruntimeconfig.cache
+/home/a2023952438/Códigos/T. POO/POO/ArrayPool/obj/Debug/net8.0/ref/ArrayPool.dll

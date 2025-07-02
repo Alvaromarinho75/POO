@@ -1,0 +1,109 @@
+\documentclass[
+	12pt,
+	oneside,
+	a4paper,
+	english,
+	brazil,
+	]{abntex2}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+\usepackage{listings}
+
+% DADOS PARA CAPA
+\titulo{Simulador de Batalha RPG com SIMD}
+\autor{Álvaro Marinho da Silva Oliveira}
+\local{Belo Horizonte, Brasil}
+\data{2025}
+\instituicao{
+  Universidade Federal de Minas Gerais
+  \par
+  Colégio Técnico
+  \par
+  Curso Técnico em Informática
+}
+
+\definecolor{blue}{RGB}{41,5,195}
+
+\makeatletter
+\hypersetup{
+     	pdftitle={\@title},
+		pdfauthor={\@author},
+    	colorlinks=true,
+    	linkcolor=blue,
+    	citecolor=blue,
+    	filecolor=magenta,
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+
+\renewcommand{\thesection}{\arabic{section}}
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}
+
+\makeindex
+
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing
+
+\imprimircapa
+
+\section{Introdução}
+O objetivo deste trabalho é otimizar o sistema de cálculo de dano em batalhas massivas de RPG, utilizando técnicas de SIMD (Single Instruction, Multiple Data) para acelerar o processamento de ataques entre exércitos de milhares de personagens. O problema original apresentava lentidão significativa devido ao processamento sequencial dos cálculos de dano, especialmente em raids com muitos jogadores.
+
+\section{Desenvolvimento}
+No sistema original, cada personagem é representado por uma struct com atributos de ataque, defesa, chance e multiplicador de crítico, vida e status de vivo. O cálculo de dano era feito de forma escalar, personagem a personagem, o que gerava grande pressão no processador e no garbage collector em batalhas de larga escala.
+
+A otimização foi realizada em duas etapas principais:
+\begin{itemize}
+    \item \textbf{Reestruturação dos dados}: Conversão de um array de structs para uma struct de arrays (SoA), facilitando o acesso vetorizado.
+    \item \textbf{Cálculo vetorizado}: Uso da biblioteca \texttt{System.Numerics.Vector} para realizar operações matemáticas em blocos de 8 inteiros simultaneamente, incluindo cálculo de dano base, aplicação de crítico e filtragem de personagens vivos.
+\end{itemize}
+
+O benchmark foi implementado para comparar o desempenho das versões escalar e SIMD, processando exércitos de até 1.000.000 de personagens. O cálculo de dano considera ataque, defesa, chance de crítico, multiplicador de crítico e status de vivo para cada personagem.
+
+\section{Resultados}
+Os testes foram realizados em um ambiente com suporte a SIMD (\texttt{Vector.IsHardwareAccelerated = true}). Os resultados de tempo e throughput (DPS -- danos por segundo) para as versões escalar e SIMD estão na Tabela~\ref{tab:resultados}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Tamanho & Tempo Escalar & DPS Escalar & Tempo SIMD & DPS SIMD & Speedup \\
+\midrule
+10.000   & 0,23 ms & 536.922.000 & 0,82 ms & 540.281.000 & 0,28x \\
+50.000   & 0,62 ms & 2.679.377.000 & 1,10 ms & 2.434.040.138 & 0,56x \\
+100.000  & 1,16 ms & 4.651.228.359 & 2,10 ms & 2.549.775.137 & 0,55x \\
+500.000  & 5,94 ms & 4.519.410.081 & 10,70 ms & 2.510.187.699 & 0,55x \\
+1.000.000 & 11,50 ms & 4.667.343.418 & 16,35 ms & 3.280.923.088 & 0,70x \\
+\bottomrule
+\end{tabular}
+\caption{Resultados do benchmark: comparação entre versão escalar e SIMD}
+\label{tab:resultados}
+\end{table}
+
+Os resultados mostram que, neste cenário, a versão SIMD não superou a versão escalar em performance. O speedup ficou abaixo de 1, indicando que a abordagem vetorizada foi mais lenta. Isso pode ser explicado por alguns fatores:
+\begin{itemize}
+    \item O cálculo de dano é relativamente simples, com poucas operações matemáticas por personagem, o que reduz o benefício do paralelismo SIMD.
+    \item O overhead de preparar os dados, gerar números aleatórios vetorizados e manipular máscaras pode superar o ganho do processamento paralelo.
+    \item O processador e o runtime .NET já otimizam fortemente loops simples, tornando a versão escalar muito eficiente.
+\end{itemize}
+
+Apesar disso, a implementação SIMD é válida e pode trazer ganhos em cenários com cálculos mais complexos ou maior reutilização de dados vetorizados.
+
+\section{Conclusão}
+A experiência demonstrou que nem sempre o uso de SIMD garante aceleração, especialmente para operações simples e fortemente otimizadas pelo compilador. O conhecimento de arquitetura e análise de perfil são essenciais para decidir quando aplicar técnicas de paralelismo de dados. O projeto serviu para consolidar conceitos de otimização, estruturação de dados e uso de recursos avançados do .NET.
+
+\end{document} 

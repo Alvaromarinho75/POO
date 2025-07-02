@@ -1,0 +1,15 @@
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/bin/Debug/net8.0/BatalhaRPG
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.AssemblyInfoInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.AssemblyInfo.cs
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.csproj.CoreCompileInputs.cache
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.sourcelink.json
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.dll
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/refint/BatalhaRPG.dll
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.pdb
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/bin/Debug/net8.0/BatalhaRPG.deps.json
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/bin/Debug/net8.0/BatalhaRPG.runtimeconfig.json
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/bin/Debug/net8.0/BatalhaRPG.dll
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/bin/Debug/net8.0/BatalhaRPG.pdb
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/BatalhaRPG.genruntimeconfig.cache
+/home/a2023952438/Códigos/T. POO/POO/BatalhaRPG/BatalhaRPG/obj/Debug/net8.0/ref/BatalhaRPG.dll
